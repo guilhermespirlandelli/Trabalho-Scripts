@@ -18,7 +18,7 @@ export default function TabelaEspecialidade(props) {
           <td> {item.esp_descricao} </td>
           <td> {item.esp_responsavel} </td>
           <td> {item.esp_vagas} </td>
-
+          <td> {item.hos_codigo} </td>
 
           <td id="editar"> <a className="btn btn-primary btn-block" href={props.chave + item.esp_codigo} > Editar </a></td>
           {/* <td id="ativar"> <a className="btn btn-danger btn-block" href={props.chave + item.aut_codigo} > Inativar </a></td> */}
@@ -39,6 +39,7 @@ export default function TabelaEspecialidade(props) {
             <th scope="col"> Descrição </th>
             <th scope="col"> Responsável </th>
             <th scope="col"> Vagas </th>
+            <th scope="col"> Código do Hospital </th>
 
             <th scope="col"><a href={props.chave + '0'} className="btn btn-success btn-block">Nova Especialidade</a></th>
           </tr>

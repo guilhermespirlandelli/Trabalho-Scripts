@@ -18,6 +18,7 @@ export default function EspecialidadeEditar() {
     const [descricao, setDescricao] = useState('');
     const [responsavel, setResponsavel] = useState('');
     const [vagas, setVagas] = useState('');
+    const [hoscodigo, setHoscodigo] = useState('');
     
 
 
@@ -52,12 +53,12 @@ export default function EspecialidadeEditar() {
                 setCodigo(data[0].esp_codigo);
 
                 setDescricao(data[0].esp_descricao);
-                setResponsavel(data[0].responsavel);
+                setResponsavel(data[0].esp_responsavel);
                 setVagas(data[0].esp_vagas);
-                
+                setHoscodigo(data[0].hos_codigo);
 
 
-                console.log(data[0].hos_nome)
+                console.log(data[0].esp_descricao)
                 //                } catch (error) {
                 //                    alert("Ocorreu um erro...");
                 //                }
@@ -77,10 +78,10 @@ export default function EspecialidadeEditar() {
         const formData = new FormData(e.target);
         const data = Object.fromEntries(formData);
 
-        console.log("Dados Form: " + data.esp_codigo);
+        console.log("Dados Form: " + data.esp_descricao);
 
         try {
-            if (codigo.length === 0) {
+            if (descricao.length === 0) {
                 alert('Insira um nome válido')
             } else {
                 console.log("Codigo Autor: ", id)
@@ -116,7 +117,7 @@ export default function EspecialidadeEditar() {
                     </div>
 
                     <div className="form-row">
-                        <div className="col-md-1 offset-md-1">
+                        <div className="col-md-4 offset-md-1">
                             <label> Descrição </label>
                             <input type="text" id="esp_descricao" className="form-control"
                                 name="esp_descricao"
@@ -144,6 +145,17 @@ export default function EspecialidadeEditar() {
                                 id="esp_vagas"
                                 value={vagas}
                                 onChange={e => setVagas(e.target.value)}
+                            />
+                        </div>
+                    </div>
+
+                    <div className="form-row">
+                        <div className="col-md-4 offset-md-1">
+                            <label> Código Hospital </label>
+                            <input type="text" className="form-control" name="hos_codigo"
+                                id="hos_codigo"
+                                value={hoscodigo}
+                                onChange={e => setHoscodigo(e.target.value)}
                             />
                         </div>
                     </div>

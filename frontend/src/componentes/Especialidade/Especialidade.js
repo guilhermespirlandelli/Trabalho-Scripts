@@ -19,6 +19,7 @@ function Especialidade() {
     urlapi.get('especialidade')
       .then(response => response.data)
       .then(response => setEspecialidade(response))
+      
   }, []
   )
 

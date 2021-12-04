@@ -116,7 +116,7 @@ export default function HospitalEditar() {
                     </div>
 
                     <div className="form-row">
-                        <div className="col-md-1 offset-md-1">
+                        <div className="col-md-4 offset-md-1">
                             <label> Nome </label>
                             <input type="text" id="hos_nome" className="form-control"
                                 name="hos_nome"
